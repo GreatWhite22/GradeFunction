@@ -1,4 +1,3 @@
-package lab3;
 
 import java.util.Random;
 
@@ -17,6 +16,9 @@ public class MyGradeFunction implements GradeFunction {
     public int grade(int classID, int hours){
     	if(classID == 0 && hours == 40){
     		return maxGrade;
+    	}
+    	if(classID == 0 && hours == 1){
+    		return 3;
     	}
     	else if(classID == 1 && hours == 39){
     		return maxGrade - 1;
