@@ -16,8 +16,9 @@ public class Driver {
         SquareGradeFunction gf = new SquareGradeFunction(n, maxgrade);
         SquareRootGradeFunction gfr = new SquareRootGradeFunction(n, maxgrade);
         CustomGradeFunction gfc = new CustomGradeFunction(n, maxgrade);
+        MyGradeFunction mgf = new MyGradeFunction(n, maxgrade);
 
-        program.initialize(n, maxgrade, gf);
+        program.initialize(n, maxgrade, mgf);
         int[] hours_array = program.computeHours(h);
         int[] grades_array = program.computeGrades(h);
         sum_grade = 0; sum_hours = 0;

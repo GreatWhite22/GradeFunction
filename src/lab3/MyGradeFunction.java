@@ -2,7 +2,7 @@ package lab3;
 
 import java.util.Random;
 
-public class MyGradeFunction {
+public class MyGradeFunction implements GradeFunction {
 	
 	private int numClasses;
     private int maxGrade;
@@ -11,10 +11,19 @@ public class MyGradeFunction {
 	    this.numClasses = n;
 	    this.maxGrade = g;
     }
-    
+    //checks case where grade obtained for spending all time on one class is maxGrade
+    //but the best grade you can obtain is from spending part of time on one class
+    //and the other part on another
     public int grade(int classID, int hours){
-    	int newGrade = new Random(Integer);
+    	if(classID == 0 && hours == 40){
+    		return maxGrade;
+    	}
+    	else if(classID == 1 && hours == 39){
+    		return maxGrade - 1;
+    	}
+    	else if(classID == 2 && hours == 1){
+    		return 2;
+    	}
     	return 0;
     }
-
 }
